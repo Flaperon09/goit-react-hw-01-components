@@ -3,15 +3,15 @@ import { StatisticsWrapper, StatisticsTitle, List, ListItem, ItemHeader, ItemDat
 export const Statistics = ({ stats, title }) => {
     return (
         <StatisticsWrapper>
-            <StatisticsTitle>{title}</StatisticsTitle>
-
+            {title === undefined ? '' : <StatisticsTitle>{title}</StatisticsTitle>}
             <List>
-                {stats.map(info => {
+                {stats.map(({ id, label, percentage }) => {
                     return (
-                        <ListItem $variant = {info.id} key={info.id}>
-                            <ItemHeader>{info.label}</ItemHeader>
-                            <ItemData>{info.percentage}%</ItemData>
-                    </ListItem>)
+                        <ListItem $variant={id} key={id}>
+                            <ItemHeader>{label}</ItemHeader>
+                            <ItemData>{percentage}%</ItemData>
+                        </ListItem>
+                    )
                 })}
             </List>
         </StatisticsWrapper>

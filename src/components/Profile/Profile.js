@@ -1,6 +1,6 @@
 import { ProfileWrapper, ProfileCard, ProfileImg, ProfileName, ProfileData, ProfileStat, ProfileStatItem, ItemDataHead, ItemDataInfo } from "./Profile.styled";
 
-export const Profile = ({ username, tag, location, avatar, stats }) => {
+export const Profile = ({ username, tag, location, avatar, stats:{ followers, views, likes } }) => {
   return (
     <ProfileWrapper>
       <ProfileCard>
@@ -16,15 +16,15 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
       <ProfileStat>
         <ProfileStatItem>
           <ItemDataHead>Followers</ItemDataHead>
-          <ItemDataInfo>{stats.followers}</ItemDataInfo>
+          <ItemDataInfo>{followers}</ItemDataInfo>
         </ProfileStatItem>
         <ProfileStatItem>
           <ItemDataHead>Views</ItemDataHead>
-          <ItemDataInfo>{stats.views}</ItemDataInfo>
+          <ItemDataInfo>{views}</ItemDataInfo>
         </ProfileStatItem>
         <ProfileStatItem>
           <ItemDataHead>Likes</ItemDataHead>
-          <ItemDataInfo>{stats.likes}</ItemDataInfo>
+          <ItemDataInfo>{likes}</ItemDataInfo>
         </ProfileStatItem>
       </ProfileStat>
     </ProfileWrapper>

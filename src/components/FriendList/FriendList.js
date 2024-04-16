@@ -1,17 +1,19 @@
-import { FriendWrapper, FriendTitle, Icon, FriendsList, FriendsListItem, FriendIsOnLine, FriendAvatar, FriendName } from "./FriendList.styled";
+import { FriendWrapper, FriendTitle, FriendsList } from "./FriendList.styled";
+import {  FriendListItem } from '../FriendListItem/FriendListItem';
 
 export const FriendList = ({ friends }) => {
     return (
         <FriendWrapper>
             <FriendTitle>Friends</FriendTitle>
             <FriendsList>
-                {friends.map(friend => {
+                {friends.map(({ id, isOnline, avatar, name }) => {
                     return (
-                        <FriendsListItem key={friend.id}>
-                            <FriendIsOnLine><Icon $variant={friend.isOnline} /></FriendIsOnLine>
-                            <FriendAvatar src={friend.avatar} alt="User avatar" width="48" />
-                            <FriendName>{friend.name}</FriendName>
-                        </FriendsListItem>
+                        <FriendListItem
+                            key={id}
+                            isOnline={isOnline}
+                            avatar={avatar}
+                            name={name}                                                    
+                        />
                     )
                 })}
             </FriendsList>

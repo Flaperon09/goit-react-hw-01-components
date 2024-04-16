@@ -19,8 +19,6 @@ export const StatisticsTitle = styled.h2`
     background-color: #f2e7fb;
 
     border: 1px solid #9DA8B4;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
 
     padding: 20px;
 `;
@@ -31,10 +29,6 @@ export const List = styled.ul`
     border-right: 1px solid #9DA8B4;
     border-bottom: 1px solid #9DA8B4;
     border-left: 1px solid #9DA8B4;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-
-    overflow: hidden; // Цвет background-color вписывается в закругления
 
     list-style: none;
 `;
