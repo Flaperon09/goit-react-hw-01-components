@@ -3,7 +3,8 @@ import { StatisticsWrapper, StatisticsTitle, List, ListItem, ItemHeader, ItemDat
 export const Statistics = ({ stats, title }) => {
     return (
         <StatisticsWrapper>
-            {title === undefined ? '' : <StatisticsTitle>{title}</StatisticsTitle>}
+            {/* {title === undefined ? '' : <StatisticsTitle>{title}</StatisticsTitle>} */}
+            {title !== undefined && <StatisticsTitle>{title}</StatisticsTitle>}
             <List>
                 {stats.map(({ id, label, percentage }) => {
                     return (
